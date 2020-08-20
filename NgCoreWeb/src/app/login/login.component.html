@@ -1,0 +1,22 @@
+<div class=" text-center container">
+   <div class="row">
+     <div class="col-lg-4 col-md-4"></div>
+     <div class="col-lg-6 col-md-6">
+       <form class="form-signin col-md-4" #userLogin="ngForm" (ngSubmit)="Login(userLogin.value)">
+         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+         <input type="text" id="txtUserName" name="name" ngModel class="form-control" placeholder="Email address/ User Name" required="" autofocus="" #name="ngModel">
+         <span class="alert-danger" *ngIf="!name.valid && (name.touched||name.ditry)">Please Enter UserName...!</span>
+         <br />
+         <input type="password" id="txtPassword" name="password" ngModel class="form-control" placeholder="Password" required minlength="4" #password="ngModel">
+         <span class="alert-danger" *ngIf="password.invalid && (password.touched||password.dirty)">Please Enter Password atleast 4 Char.</span>
+         <div class="checkbox mb-3">
+           <label>
+             <input type="checkbox" value="remember-me"> Remember me
+           </label>
+         </div>
+         <button class="btn btn-lg btn-primary btn-block" [disabled]="!userLogin.valid &&(userLogin.touched||userLogin.dirty)" type="submit">Sign in</button>
+       </form>
+     </div>
+   </div>
+</div>

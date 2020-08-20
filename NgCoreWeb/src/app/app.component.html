@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="text-center">
+
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <a routerLink="/user">User</a>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <a routerLink="/register" routerLinkActive="active fluffy">Register</a>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <a routerLink="/mail" routerLinkActive="active fluffy">mail</a>
+  <button *ngIf="islogedin" class="btn btn-outline-danger" (click)="logOut()">LogOut</button>
+  <router-outlet></router-outlet>
+</div>
+
+

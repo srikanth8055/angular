@@ -1,0 +1,42 @@
+<p>user-details works!</p>
+<!-- <a routerLink="">New component</a> -->
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5 col-md-5">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Email Id</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td hidden="hidden">
+              <input type="hidden" name="id" id="txtid" value="{{user.id}}" />
+            </td>
+            <td>
+              {{ user.name }}
+            </td>
+            <td>
+              {{ user.role }}
+            </td>
+            <td>
+              {{ user.mailId }}
+            </td>
+            <td>
+              <input type="button" (click)="deleteUser(user)" value="Delete" class="btn btn-danger btn-sm" />
+              <span>&nbsp;</span>
+              <input type="button" (click)="EditUser(user)" value=" Edit " class="btn btn-sm btn-warning" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-1 col-md-1"></div>
+  </div>
+</div>
+<router-outlet></router-outlet>
